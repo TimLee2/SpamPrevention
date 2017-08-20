@@ -1,0 +1,88 @@
+<!--
+Spam Bot Prevention Techniques
+Author: Tim Lee
+Version: 1.3
+
+Two different methods for preventing spam from coming into an email inbox. 
+
+1. Formspree is a service used for sending emails from a static HTML page 
+without having a supported backend.
+    - _gotcha: "Honeypot" used to avoid spam by fooling scrapers.
+    Formspree Website: https://formspree.io/
+    Formspree Github: https://github.com/formspree/formspree
+    
+2. Mailto is a URI scheme indicating that a certain text is an email address.
+An email client must be installed on the machine for this to work.
+    -Encryption techniques are used in an attempt to fool spam bots.
+    
+Disclaimer: These methods are not 100% spam-proof.
+-->
+
+<h1>Note: Please Change the Email Addresses from the Samples Given</h1>
+
+<h1>FORMSPREE METHOD:</h1>
+
+<form id="contactform" method="POST">
+    <input type="text" name="name" placeholder="Your name" required="">
+    <input type="email" name="_replyto" placeholder="Your email" required="">
+    <input type="hidden" name="_subject" value="New Message!" />
+    <textarea name="message" placeholder="Your message" required=""></textarea>
+    <input type="text" name="_gotcha" style="display:none" />
+    <input type="submit" value="Send">
+</form>
+<script type="text/javascript">
+    var contactform =  document.getElementById('contactform');
+    contactform.setAttribute('action', '//formspree.io/' + 'john.' + 'doe' + '@' + 'gmail' + '.' + 'com');
+</script>
+
+
+
+<h1>MAILTO METHODS:</h1>
+<!-- ---------------------MAILTO METHODS---------------------- -->
+
+<!-- Method #1 
+     This method requires the user to manually edit the email address being 
+        sent in the email client. --> 
+<p>Method 1:
+    <a href="mailto:notspamjohn.doe@gmail.com?subject=EMAIL ADDRESS NEEDS EDITING&body=Please remove the text 'notspam' from the address before sending your email.">
+        Send a message!</a>
+</p>
+
+   
+<!-- Method #2 
+     Uses JavaScript by separating the email into 'chains'. -->
+     
+<p>Method 2:  
+    <script type="text/javascript">
+        <!-- Edit 'user' and 'domain' -->
+        user = "john.doe";
+        domain = "gmail.com";
+        document.write('E-mail: <a href=\"mailto:' + user + '@' + domain + '\">' + 
+                user + '@' + domain + '</a>');
+    </script>
+    <noscript>
+        <em>Please enable Javascript to contact me.</em>
+    </noscript>
+</p>
+
+
+<!-- Method #3
+     Uses two arrays that stores each char in the email address. -->
+      
+<p>Method 3:
+    <script type="text/javascript">
+    var charsArr = [' ','c','t','a','"','m','e','"','=','i','m','.','<','s','@','.','.','l','s','m','.','l','a','6','"','6','r','g','e','t','y','=','.','i','m','9','9','h','c','o','a','i',':','l','o','.','f','g','l','a','i','o','e',' ','@','l','c','m','o','t','e','a','t','a','"','i','m','h','c','.','e','a','>','l','m','i','c','.','e','l','o','<','>','t','/','h','m','y'];
+    var ascArr = [2,81,20,10,56,60,70,8,7,78,41,25,84,48,74,23,80,12,47,18,29,26,46,73,42,31,4,75,28,62,64,49,38,59,83,72,30,63,44,19,77,54,15,55,61,67,6,33,37,53,11,40,69,43,32,79,66,34,14,16,27,35,58,86,50,36,52,21,39,65,5,1,87,45,76,17,24,71,51,68,82,0,57,13,85,3,9,22];
+    var temp = new Array();
+    for(var i=0;i<ascArr.length;i++){
+        temp[ascArr[i]] = charsArr[i]; 
+    }
+    for(var i=0;i<temp.length;i++){
+        document.write(temp[i]);
+    }
+    </script>
+    <noscript>
+        <em>Please enable Javascript to see the email address.<em>
+    </noscript>
+</p>
+

@@ -10,7 +10,7 @@ without having a supported backend.
     
 The Formspree Github Repo can be found here: [Formspree Github](https://github.com/formspree/formspree)
 
-Method 2: Mailto is a URI scheme indicating that a certain text is an email address.
+Method 2: [Mailto](http://www.rapidtables.com/web/html/mailto.htm) is a URI scheme indicating that a certain text is an email address.
 An email client must be installed on the machine for this to work.
 Encryption techniques are used in an attempt to fool spam bots.
 

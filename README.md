@@ -24,5 +24,5 @@ The email addresses used are sample emails. The emails need to be manually
 changed for the purpose of self-testing. 
 
 # Disclamer
-Disclaimer: These methods are not 100% spam-proof.
+NoteL These methods are not 100% spam-proof. 
 

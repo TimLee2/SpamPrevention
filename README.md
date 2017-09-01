@@ -6,7 +6,7 @@ forms.
 Method 1: [Formspree](https://formspree.io/) is a service used for sending emails from a static HTML page 
 without having a supported backend.
 
-    > _gotcha: "Honeypot" used to avoid spam by fooling scrapers.
+    > _gotcha (Formspree feature): "Honeypot" used to avoid spam by fooling scrapers.
     
 The Formspree Github Repo can be found here: [Formspree Github](https://github.com/formspree/formspree)
 
